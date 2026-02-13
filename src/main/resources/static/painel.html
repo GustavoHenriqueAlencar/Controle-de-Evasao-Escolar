@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- Define o conjunto de caracteres -->
+    <meta charset="UTF-8">
+
+    <!-- Título da aba do navegador -->
+    <title>Controle de Evasão Escolar</title>
+
+    <!-- Importação do CSS (Spring Boot) -->
+    <link rel="stylesheet" href="/static/CSS/style.css"
+    >
+</head>
+<body>
+
+<!-- Cabeçalho principal do sistema -->
+<header class="topo">
+    <h1>Controle de Evasão Escolar</h1>
+    <p>Acompanhamento inteligente de frequência</p>
+</header>
+
+<!-- Conteúdo principal -->
+<main class="container">
+
+    <!-- Card: Dados da Turma -->
+    <section class="card destaque">
+        <h2>Dados da Turma</h2>
+
+        <!-- Linha com inputs e botão -->
+        <div class="linha">
+            <input type="text" placeholder="Curso">
+            <select>
+                <option value="">Selecione o período</option>
+                <option value="MATUTINO">Manhã</option>
+                <option value="VESPERTINO">Tarde</option>
+                <option value="NOTURNO">Noite</option>
+            </select>
+
+            <input type="text" placeholder="Empresa">
+
+            <button class="btn-roxo" onclick="buscarTurma()">Buscar</button>
+
+        </div>
+    </section>
+
+    <!-- Card: Cadastro de alunos -->
+    <section class="card">
+        <h2>Cadastro de Alunos</h2>
+
+        <div class="linha">
+            <input type="text" placeholder="Nome do aluno">
+            <input type="text" placeholder="Nome da empresa">
+            <button class="btn-salmao" onclick="adicionarAluno()">Adicionar</button>
+        </div>
+    </section>
+
+    <!-- Card: Frequência -->
+    <section class="card">
+        <h2>Frequência</h2>
+
+        <!-- Tabela de frequência -->
+        <table>
+            <thead>
+            <tr>
+                <th>Aluno</th>
+                <th>Faltas</th>
+                <th>Justificativa</th>
+                <th>Ações</th>
+            </tr>
+            </thead>
+
+            <!-- Antes da tabela -->
+            <div class="linha">
+                <select id="empresa">
+                    <option value="">Selecione a Empresa</option>
+                    <option value="Empresa1">Empresa 1</option>
+                    <option value="Empresa2">Empresa 2</option>
+                    <option value="Empresa3">Empresa 3</option>
+                </select>
+
+                <select id="curso">
+                    <option value="">Selecione o Curso</option>
+                    <option value="Curso1">Curso 1</option>
+                    <option value="Curso2">Curso 2</option>
+                    <option value="Curso3">Curso 3</option>
+                </select>
+            </div>
+
+
+            <tbody>
+            <tr>
+                <td>Aluno Exemplo</td>
+                <td>1</td>
+                <td>—</td>
+                <td>
+                    <button class="btn-mini">Editar</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <!-- Botão para salvar frequência -->
+        <button class="btn-verde" onclick="salvarFrequencia()">Salvar Frequência</button>
+
+    </section>
+
+    <!-- Card: Relatórios -->
+    <section class="card relatorios">
+        <h2>Relatórios</h2>
+
+        <div class="linha">
+            <button class="btn-outline" onclick="relatorioSemanal()">Semanal</button>
+            <button class="btn-outline" onclick="relatorioMensal()">Mensal</button>
+            <button class="btn-outline" onclick="exportarPlanilha()">Exportar Planilha</button>
+            <button class="btn-salmao" onclick="enviarCoordenacao()">Enviar Coordenação</button>
+
+        </div>
+    </section>
+
+</main>
+
+<!-- Rodapé -->
+<footer>
+    Sistema Educacional • Design LMRG
+</footer>
+
+<script src="/static/JS/turma.js"></script>
+
+</body>
+</html>

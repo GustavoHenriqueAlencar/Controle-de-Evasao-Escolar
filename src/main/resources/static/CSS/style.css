@@ -1,0 +1,377 @@
+/* =========================
+   Variáveis globais de cor
+   ========================= */
+:root {
+    /* Cor principal do sistema */
+    --roxo: #6A1B9A;
+
+    /* Roxo mais claro (gradientes e hover) */
+    --roxo-claro: #9C4DCC;
+
+    /* Cor de destaque (botões e bordas) */
+    --salmao: #FF7A7A;
+
+    /* Branco padrão */
+    --branco: #FFFFFF;
+
+    /* Cor de fundo da página */
+    --fundo: #F7F4FB;
+}
+
+/* =========================
+   Reset básico do navegador
+   ========================= */
+* {
+    /* Remove margens padrão */
+    margin: 0;
+
+    /* Remove espaçamentos padrão */
+    padding: 0;
+
+    /* Garante que padding e borda não alterem o tamanho dos elementos */
+    box-sizing: border-box;
+
+    /* Define a fonte padrão do sistema */
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* =========================
+   Estilo geral do corpo
+   ========================= */
+body {
+    /* Cor de fundo da página */
+    background: var(--fundo);
+
+    /* Cor padrão do texto */
+    color: #333;
+}
+
+/* =========================
+   Cabeçalho do sistema
+   ========================= */
+.topo {
+    /* Fundo em gradiente roxo */
+    background: linear-gradient(120deg, var(--roxo), var(--roxo-claro));
+
+    /* Cor do texto do cabeçalho */
+    color: var(--branco);
+
+    /* Espaçamento interno */
+    padding: 50px 20px;
+
+    /* Centraliza o texto */
+    text-align: center;
+
+    /* Bordas arredondadas na parte inferior */
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+}
+
+/* Estilo do select */
+select {
+    width: 200px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    /* Remove aparência padrão */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    /* Seta personalizada roxa */
+    background-image: url("data:image/svg+xml;utf8,<svg fill='%236A1B9A' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 18px;
+
+    padding-right: 40px;
+}
+
+/* Efeito ao passar o mouse */
+select:hover {
+    border-color: #6A1B9A;
+}
+
+/* Efeito ao clicar */
+select:focus {
+    border-color: #6A1B9A;
+    box-shadow: 0 0 6px rgba(106, 27, 154, 0.4);
+    outline: none;
+}
+
+/* Título principal do cabeçalho */
+.topo h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+/* =========================
+   Container principal
+   ========================= */
+.container {
+    /* Largura máxima do conteúdo */
+    max-width: 1100px;
+
+    /* Centraliza na tela e sobrepõe o cabeçalho */
+    margin: -30px auto 40px;
+
+    /* Espaçamento lateral */
+    padding: 0 20px;
+}
+
+/* =========================
+   Cartões (cards)
+   ========================= */
+.card {
+    /* Fundo branco */
+    background: var(--branco);
+
+    /* Bordas arredondadas */
+    border-radius: 20px;
+
+    /* Espaçamento interno */
+    padding: 25px;
+
+    /* Espaço entre os cards */
+    margin-bottom: 25px;
+
+    /* Sombra suave */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* Títulos dentro dos cards */
+.card h2 {
+    margin-bottom: 20px;
+    color: var(--roxo);
+}
+
+/* Card em destaque */
+.destaque {
+    /* Borda lateral colorida */
+    border-left: 8px solid var(--salmao);
+}
+
+/* =========================
+   Linhas de formulário
+   ========================= */
+.linha {
+    /* Organiza os elementos lado a lado */
+    display: flex;
+
+    /* Espaço entre os elementos */
+    gap: 12px;
+
+    /* Quebra linha em telas pequenas */
+    flex-wrap: wrap;
+}
+
+/* =========================
+   Campos de texto
+   ========================= */
+input {
+    /* Ocupa o máximo de espaço disponível */
+    flex: 1;
+
+    /* Espaçamento interno */
+    padding: 12px 15px;
+
+    /* Bordas arredondadas */
+    border-radius: 12px;
+
+    /* Borda padrão */
+    border: 1px solid #ddd;
+
+    /* Tamanho do texto */
+    font-size: 15px;
+}
+
+/* Estilo ao focar no input */
+input:focus {
+    outline: none;
+    border-color: var(--roxo);
+}
+
+/* =========================
+   Botões (estilo base)
+   ========================= */
+button {
+    /* Remove borda padrão */
+    border: none;
+
+    /* Bordas arredondadas */
+    border-radius: 14px;
+
+    /* Espaçamento interno */
+    padding: 12px 20px;
+
+    /* Texto em negrito */
+    font-weight: 600;
+
+    /* Cursor de clique */
+    cursor: pointer;
+
+    /* Animação suave */
+    transition: 0.2s ease;
+}
+
+/* Botão roxo */
+.btn-roxo {
+    background: var(--roxo);
+    color: white;
+}
+
+/* Hover do botão roxo */
+.btn-roxo:hover {
+    background: var(--roxo-claro);
+}
+
+/* Botão salmão */
+.btn-salmao {
+    background: var(--salmao);
+    color: white;
+}
+
+/* Hover do botão salmão */
+.btn-salmao:hover {
+    opacity: 0.85;
+}
+
+/* Botão verde (salvar) */
+.btn-verde {
+    margin-top: 15px;
+    background: #2ecc71;
+    color: white;
+}
+
+/* Botão com contorno */
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--roxo);
+    color: var(--roxo);
+}
+
+/* Hover do botão outline */
+.btn-outline:hover {
+    background: var(--roxo);
+    color: white;
+}
+
+/* Botão pequeno (tabela) */
+.btn-mini {
+    padding: 6px 12px;
+    font-size: 14px;
+    background: var(--roxo);
+    color: white;
+}
+
+/* =========================
+   Tabela de frequência
+   ========================= */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+/* Cabeçalho da tabela */
+th {
+    background: #efe7f7;
+    color: var(--roxo);
+}
+
+/* Células da tabela */
+th, td {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+}
+
+
+/* Efeito ao passar o mouse */
+select:hover {
+    border-color: #6A1B9A;
+}
+
+/* Efeito ao clicar */
+select:focus {
+    border-color: #6A1B9A;
+    box-shadow: 0 0 6px rgba(106, 27, 154, 0.4);
+    outline: none;
+}
+
+
+/* =========================
+   Rodapé
+   ========================= */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #777;
+    font-size: 14px;
+}
+
+/* Linha que segura os selects */
+.linha {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+/* Selects da frequência */
+.linha select {
+    min-width: 220px;
+    padding: 10px 16px;
+    border-radius: 10px;
+    border: 1px solid #d1c4e9;
+    background-color: #f5f2fa;
+    font-size: 14px;
+    color: #4a148c;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    /* Seta personalizada roxa */
+    background-image: url("data:image/svg+xml;utf8,<svg fill='%236A1B9A' height='18' viewBox='0 0 24 24' width='18' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 16px;
+
+    padding-right: 40px;
+}
+
+/* Hover */
+.linha select:hover {
+    border-color: #7b1fa2;
+    background-color: #ede7f6;
+}
+
+/* Focus */
+.linha select:focus {
+    border-color: #6a1b9a;
+    box-shadow: 0 0 6px rgba(106, 27, 154, 0.3);
+    outline: none;
+}
+
+.linha input,
+.linha select {
+    height: 44px;
+}
+
+
+
+/* =========================
+   OBS: código de teste
+   ========================= */
+/*
+body {
+    background: white !important;
+}
+*/

@@ -1,10 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Login • Controle de Evasão</title>
+
+    <link rel="stylesheet" href="/static/CSS/login.css">
+
+    <script>
+        function login() {
+            const usuario = document.getElementById("usuario").value;
+            const senha = document.getElementById("senha").value;
+            const erro = document.getElementById("erro");
+
+            if (usuario === "admin" && senha === "123") {
+                window.location.href = "painel.html";
+            } else {
+                erro.textContent = "Usuário ou senha incorretos! 😕";
+            }
+        }
+    </script>
 </head>
 <body>
+
+<div class="login-container">
+    <h1>Bem-vindo(a) 💜</h1>
+    <p>Controle de Evasão Escolar</p>
+
+    <input type="text" id="usuario" placeholder="Usuário ou Email">
+    <input type="password" id="senha" placeholder="Senha">
+
+    <button onclick="login()">Entrar</button>
+
+    <span id="erro"></span>
+</div>
 
 </body>
 </html>
